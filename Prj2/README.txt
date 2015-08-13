@@ -1,3 +1,18 @@
+Solution to the change problem with
+time analysis and comparison of 3 algorithms.
+
+
+Algorithms: changedp (dynamic programming),
+	    changegreedy ( greedy alg with local optimum: max coin value)
+	    changeslow: (recursive alg: no storage)
+
+
+Author: Subhei Shaar
+Date: 7/17/2015
+
+
+
+
 How to get program running:
 
 type in "make all"
