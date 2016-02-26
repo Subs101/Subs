@@ -1,0 +1,347 @@
+1.convert the following values to 2's complement binary,octal, and hex:
+
+	note: using 16 bits
+
+	-17:  
+		2's complement: 
+
+
+			17 base ten to binary -> 0000 0000 0001 0001
+
+			invert each digit in binary ->    1111 1111 1110 1110
+			
+			add 1 to the the complement ->    1111 1111 1110 1111
+			
+			answer:  0b1111111111101111
+
+		octal:
+			17 base ten to binary -> 0000 0000 0001 0001
+
+			convert to 2's complement to represent -17 -> 1111 1111 1110 1111
+
+			group by 3 bits from right to left ->          1 111 111 101 111
+			
+			add 2 zeros to the left ->          001 111 111 101 111
+
+			convert bits to octal ->             1   7   7   5   7
+			
+			answer: 017757
+
+
+		hex:  -17 in 2's complement -> 1111 1111 1110 1111
+
+			convert each set of 4 bits to hex equivalent number/letters ->   1111 1111 1110 1111
+										           F    F    E    F
+			answer:  0xFFEF
+
+
+
+	41:   2's complement: 
+			
+			divide until you reach 1 -> 41/2 =20 rem 1 /2 = 10 rem 0/ 2 = 5 rem 0 / 2 = 2 rem 1 /2 = 1 rem 0
+			
+			transcribe remainders starting from far right -> 101001
+			
+			fill in the rest of bits with zeros ->   0000 0000 0010 1001
+			
+			answer: 0b0000000000101001
+
+			
+		octal: 3 bit sets  from binary  0 000 000 000 101 001 -> 000 000 000 000 101 001
+			convert to octal->                                0   0   0   0   5   1
+
+			answer: 000051
+		
+		hex: separate binary into 4 bit sets ->   0000 0000 0010 1001
+			
+			convert 4 bit sets to hex ->       0    0     2    9  
+			
+			answer:  0x0029 
+
+	-2047: 
+		2's complement: 
+			
+			find binary of 2047 by division remainder method  -> 0000 0111 1111 1111
+
+									2^10 +2^9 +2^8 .. +2^0 = 2047
+
+			calculate complement and add 1 ->   1111 1000 0000 0000 +1 = 1111 1000 0000 0001
+		
+			answer: 0b11111000000000001
+
+		octal: group binary in bits of 3 ->   011 111 000 000 000 001
+			convert to octal ->             3   7   0   0   0   1
+
+			answer: 0370001
+
+		hex:   binary ->         1111 1000 0000 0001
+			hex conversion->  F    8    0     1
+			
+			answer: 0xF801
+
+	
+
+	
+
+	
+	1035903963: 
+
+		2's complement: 
+			use division and remainders to claculate binary method
+			
+			1035903963/2 =517951981 r 1 
+			517951981/2 =258975990 r 1
+			258975990/2 =129487995 r 0
+			129487995/2= 64743997 r 1
+			64743997/2 = 32371998 r 1
+			32371998/2=16185999 r 1
+			16185999/2 = 8092999 r 1
+			8092999/2= 4046499 r 1
+			4046499/2=2023249 r 1
+			2023249/2= 1011624 r 1
+			1011624/2= 505812 r 0
+			505812/2=252906 r 0
+			252906/2=126453 r 0
+			126453/2=63326 r 1
+			63326/2=31613 r 0
+			31613/2=15806 r 1
+			15806/2=7903 r 0
+			7903/2=3591 r 1
+			3691/2=1975 r 1
+			1975/2=987 r 1
+			987/2=493 r 1
+			496/2=246 r 1
+			246/2=123 r 0
+			123/2=61 r 1
+			61/2=30 r 1
+			30/2=15 r 0
+			15/2= 7 r 1
+			7/2 =3 r 1
+			3/2= 1 r 1
+			1/1= 1 r 1
+ 
+			write remainders from bottom to top -> 0000 0111 1011 0111 1101 0100 0111 1011
+		
+			answer: 0b00000111101101111101010001111011
+		octal:
+			3 bits a set  ->   000 000 111 101 101 111 101 010 001 111 011
+ 					    0   0   7   5   5   7   5   2   1   7   3
+			answer: 00755752173
+		hex:
+			4 bits a set ->  0000 0111 1011 0111 1101 0100 0111 1011
+					  0     7   B	  7    D   4    7    B
+
+			answer: 0x07B7D47B
+
+	2147483647:   
+
+		2's complement:
+
+			this number is the largest signed integer for 32 bit, so all but the leading bitthe 32 bits are set to 1
+
+			answer:  0111 1111 1111 1111 1111 1111 1111
+					
+
+		octal:  
+			000 111 111 111 111 111 111 111 111 111
+			     7   7   7   7   7   7   7   7   7
+			
+			answer: 0777777777
+
+		hex:   0111 1111 1111 1111 1111 1111 1111
+			7    F     F    F   F    F    F
+			
+			answer: 0x7FFFFFF
+
+2. Convert the following 2's complement values to decimal, octal, and hex:
+
+	0b1010011010101110:
+
+		octal: 
+			001 010 011 010 101 110 
+			 1   2   3   2   5   6
+			
+			answer: 0123256
+
+		hex:   1010 0110 1010 1110
+			A    6    A    E
+
+			answer: 0xA6AE
+
+
+		decimal :15  14  13  12 11 10 9 8 7 6 5 4 3 2 1 0                         
+
+			 1   0   1   0  0  1  1 0 1 0 1 0 1 1 1 0
+			
+			-2^15+2^13+2^10+2^9+2^7+2^5+2^3+2^2+2^1 = -22866
+
+			answer: -22866
+
+
+
+	0b10001110011011111101110101011011:
+
+
+		octal:   010 001 110 011 011 111 101 110 101 011 011
+			  2   1   6   3   3   7   5   6   5   3   3
+
+			answer: 21633756533
+
+		hex:   	1000 1110 0110 1111 1101 1101 0101 1011
+			 8    D     6   F    C     C   5    B
+
+			answer: 0x8D6FCC5B
+
+
+		decimal: 10001110011011111101110101011011
+			 -2^32  +2^28+2^27+2^26 +2^23 ... + 2^0 =-1905271461 
+
+
+			answer: -1905271461 
+
+
+	0b0111111111111111: 
+
+		octal:  000 111 111 111 111 111
+			 0   7   7   7   7   7  
+ 
+			answer: 077777
+
+		hex:  0111 1111 1111 1111
+			7   F     F    F
+
+			answer: 0x7FFF
+
+		decimal :  0111111111111111
+
+
+			    2^15 +2^14 ... +2^0 = 32767
+
+			answer: 32767
+
+
+	0b01010101010101010101010101010101:
+
+
+		octal:  001 010 101 010 101 010 101 010 101 010 101
+			 1   2   5   2   5   2   5   2   5   2   5
+		
+			answer: 012525252525
+
+		hex:    0101 0101 0101 0101 0101 0101 0101 0101
+
+			 5    5     5    5    5    5    5    5
+
+
+			answer: 0x55555555
+
+		decimal: 01010101010101010101010101010101
+
+			2^30 + 2^28 +2^26 ... + 2^0 =  1431655765 
+
+			answer: 1431655765 
+
+
+	0b10011001100110011001100110011001:
+
+		octal:   010 011 001 100 110 011 001 100 110 011 001
+  			  2   3   1   4   6   3   1   4   6   3   1
+			
+			answer: 023146314631
+
+		hex:   1001 1001 1001 1001 1001 1001 1001 1001
+
+			9    9     9    9    9    9    9    9
+
+			answer: 0x99999999
+
+		decimal:   10011001100110011001100110011001
+
+
+			-2^31 + 2^28+2^27 + ... + 2^0 = -1717986919 
+
+			answer: -1717986919 
+
+
+3. Describe the concept of a data bus...
+
+
+		A data bus is the electrical connections from the CPU to different computer peripherals.
+
+	 This is how the CPU sends out and recieves data from the memory.
+
+
+
+4. What is a bit, and where does the name come from?
+
+
+
+		A bit is the basic unit computers use to store information. Since electrical 
+
+	signals are only either on or off a bit can only take 2 different values, 0 or 1. The 
+
+	name bit comes from the shortening of the word binary digit written in an old memo at
+
+	 AT&T's Bell laboratory.
+
+
+
+
+5. How large is a byte?
+
+	A byte is 8 bits large.
+
+
+
+
+
+6. In the context of computer programming, what is a word, and how large is it?
+
+
+		Word is the native data sized used by a particular processor. In the textbook he
+
+ 	defines the standard word to be 2 bytes that are side by side in memory.
+
+
+7. What are the 8 general purpose registers?
+
+
+		The 8 general purpose registers are memory locations inside the CPU itself. 
+
+	There are three different types of general purpose registers inside the computer 16-bit ,
+ 
+	32 -bit and 8-bit register halves. In x86 32 bit architecure the names of each register 
+
+	is as follows: EAX, EBX, ECX, EDX, EBP, ESI,EDI, and ESP. These registers primarily store 
+
+	data for running programs so they can be accessed fast withouthaving to access the RAM. EAX 
+
+	is the default location for return values. EBX is a register the programmer can use. ECX  is
+ 	
+	used for counting. EDX is for multiplication and division. ESO amd EDI are for string processing. 
+
+	ESP is the stack pointer register. EBP is the base pointer that points at the bottom of the stack.
+
+8. What assembler are we using and how can you access it?
+
+
+
+		In this glass we are using the GNU assembler that can be accessed throught the g++ compiler on 
+
+	putty. The assembly file can be saved by adding the -S flag to the g++ command.
+
+
+				
+		
+
+				 
+
+						
+		
+
+	      
+
+				
+				
+
+		
